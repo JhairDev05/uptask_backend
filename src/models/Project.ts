@@ -46,7 +46,7 @@ const ProjectSchema: Schema = new Schema({
     ],
 }, {timestamps: true})
 
-// Middleware
+// Middleware aquí si se elimina un proyecto se elimina las tareas y las notas que estén dentro del proyecto que se está eliminado
 ProjectSchema.pre('deleteOne', {document: true}, async function() {
     const projectId = this._id
     if(!projectId) return

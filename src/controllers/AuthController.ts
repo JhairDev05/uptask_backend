@@ -97,7 +97,7 @@ export class AuthController {
                 return res.status(401).json({ error: error.message })
             }
 
-            const token = generateJWT({id: user._id})
+            const token = generateJWT({id: user.id})
 
             res.send(token)
 
@@ -213,7 +213,7 @@ export class AuthController {
     }
 
     static updateProfile = async (req: Request, res: Response) => {
-        const { name, email } = req.body
+        const { name, email } = req.body
 
         const userExists = await User.findOne({email})
         if(userExists && userExists.id.toString() !== req.user.id.toString() ) {

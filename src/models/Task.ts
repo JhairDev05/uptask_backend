@@ -65,7 +65,7 @@ export const TaskSchema : Schema = new Schema({
     ]
 }, {timestamps: true})
 
-// Middleware
+// Middleware son acciones que se pueden realizar antes o después de ingresar a la base de datos
 TaskSchema.pre('deleteOne', {document: true}, async function() {
     const taskId = this._id
     if(!taskId) return
