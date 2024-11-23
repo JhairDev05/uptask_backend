@@ -9,7 +9,7 @@ interface IEmail {
 export class AuthEmail {
     static sendConfirmationEmail = async ( user : IEmail ) => {
         const info = await transporter.sendMail({
-            from: 'UpTask <admin@uptask.com>',
+            from: 'UpTask <jhairdev05@gmail.com>',
             to: user.email,
             subject: 'UpTask - Confirma tu cuenta',
             text: 'UpTask - Confrima tu cuenta',
@@ -26,7 +26,7 @@ export class AuthEmail {
 
     static sendPasswordResetToken = async ( user : IEmail ) => {
         const info = await transporter.sendMail({
-            from: 'UpTask <admin@uptask.com>',
+            from: 'UpTask <jhairdev05@gmail.com>',
             to: user.email,
             subject: 'UpTask - Restablecer contraseña',
             text: 'UpTask - Restablecer contraseña',
